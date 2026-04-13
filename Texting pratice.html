@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudoType - Práctica de Código</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Dashboard View -->
+    <main id="dashboardView" class="view active">
+        <header class="app-header">
+            <div>
+                <h1>SudoType</h1>
+                <p>Mejora tu velocidad de escritura de código</p>
+            </div>
+        </header>
+
+        <section class="add-snippet-section glass-panel">
+            <h2>Crear Recorte de Código</h2>
+            <div class="input-group">
+                <input type="text" id="snippetTitle" placeholder="Título (ej. JavaScript Fetch API)" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <textarea id="snippetCode" rows="6" placeholder="Pega tu código aquí..."></textarea>
+            </div>
+            <button id="saveSnippetBtn" class="btn primary-btn">+ Guardar Código</button>
+        </section>
+
+        <section class="saved-snippets-section">
+            <h2>Tu Biblioteca</h2>
+            <div id="snippetsGrid" class="snippets-grid">
+                <!-- Dynamic Content -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Typing Arena View -->
+    <main id="arenaView" class="view">
+        <header class="arena-header">
+            <button id="backToDbBtn" class="btn text-btn">← Volver</button>
+            <h2 id="arenaTitle">Practicando Código</h2>
+            <button id="restartBtn" class="btn icon-btn" title="Restart">↻ Reiniciar</button>
+        </header>
+
+        <section class="typing-container glass-panel">
+            <div class="stats-bar">
+                <div class="stat"><span class="stat-label">time</span><span id="timeStat" class="stat-value">0s</span></div>
+                <div class="stat"><span class="stat-label">wpm</span><span id="wpmStat" class="stat-value">0</span></div>
+                <div class="stat"><span class="stat-label">acc</span><span id="accStat" class="stat-value">100%</span></div>
+                <div class="stat"><span class="stat-label">err</span><span id="errStat" class="stat-value error">0</span></div>
+            </div>
+
+            <div class="code-display-wrapper">
+                <div id="codeDisplay" class="code-display"></div>
+                <!-- Hidden input tracking actual typing natively -->
+                <textarea id="typingInput" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+            </div>
+        </section>
+    </main>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal-overlay">
+        <div class="modal glass-panel">
+            <h2 class="modal-title">¡Práctica Completada!</h2>
+            <h1 id="rankDisplay" class="rank-title">Maestro</h1>
+            <div class="results-grid">
+                <div class="result-item">
+                    <span class="label">Velocidad</span>
+                    <span id="resultWpm" class="val highlight">0 WPM</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Precisión</span>
+                    <span id="resultAcc" class="val">100%</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Tiempo</span>
+                    <span id="resultTime" class="val">0s</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Errores</span>
+                    <span id="resultErr" class="val error">0</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="modalRestartBtn" class="btn secondary-btn">Reintentar</button>
+                <button id="modalCloseBtn" class="btn primary-btn">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
