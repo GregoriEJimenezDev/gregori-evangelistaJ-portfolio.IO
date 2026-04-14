@@ -3,176 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Gregori Evangelista Jimenez, desarrollador .NET Full-Stack.">
+    <meta name="description" content="Portafolio de Gregori Evangelista Jimenez, desarrollador .NET full-stack.">
     <meta name="author" content="Gregori Evangelista Jimenez">
-    <title>Gregori Evangelista | .NET Full-Stack</title>
+    <title>Gregori Evangelista | Portafolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="bg-orb orb-a" aria-hidden="true"></div>
-    <div class="bg-orb orb-b" aria-hidden="true"></div>
+    <div class="bg-orb orb-purple" aria-hidden="true"></div>
+    <div class="bg-orb orb-cyan" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="nav container">
-            <a class="brand" href="#inicio" aria-label="Ir al inicio">GEJ</a>
-            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+            <a class="brand" href="#inicio">GEJ</a>
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
                 Menu
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mi</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero section container reveal" id="inicio">
-            <p class="eyebrow">Portafolio profesional</p>
-            <h1>Gregori Evangelista Jimenez</h1>
-            <p class="lead">
-                Desarrollador .NET Full-Stack orientado a construir aplicaciones robustas, mantenibles y enfocadas en resultados.
-            </p>
-
-            <div class="chip-row">
-                <span class="chip">.NET 8</span>
-                <span class="chip">C#</span>
-                <span class="chip">SQL Server</span>
-                <span class="chip">PostgreSQL</span>
-                <span class="chip">Clean Architecture</span>
-                <span class="chip">React</span>
-            </div>
-
-            <div class="cta-row">
-                <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-                <a class="btn btn-ghost" href="#contacto">Contactar</a>
-            </div>
-
-            <div class="kpi-grid">
-                <article class="kpi-card">
-                    <span class="kpi-value">2+</span>
-                    <span class="kpi-label">Proyectos destacados</span>
-                </article>
-                <article class="kpi-card">
-                    <span class="kpi-value">.NET</span>
-                    <span class="kpi-label">Stack principal</span>
-                </article>
-                <article class="kpi-card">
-                    <span class="kpi-value">API + Desktop</span>
-                    <span class="kpi-label">Experiencia full-stack</span>
-                </article>
-            </div>
-        </section>
-
-        <section class="section container reveal" id="sobre-mi">
-            <div class="section-head">
-                <p class="eyebrow">Perfil</p>
-                <h2>Sobre mi</h2>
-            </div>
-            <div class="about-grid">
-                <p>
-                    Soy desarrollador de software junior especializado en C# y .NET. Trabajo con enfoque en arquitectura limpia,
-                    principios SOLID y buenas practicas para entregar soluciones estables y escalables.
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+                <p class="hero-kicker">Portafolio profesional</p>
+                <h1>Hola! soy Gregori</h1>
+                <p class="hero-role" id="typedText" aria-live="polite"></p>
+                <p class="hero-copy">
+                    Explora mis proyectos, conoce mas sobre mi perfil y hablemos si buscas un desarrollador .NET comprometido con resultados.
                 </p>
-                <ul class="check-list">
-                    <li>Desarrollo de aplicaciones desktop de alto rendimiento</li>
-                    <li>Construccion de APIs REST con .NET 8 y EF Core</li>
-                    <li>Modelado y optimizacion de bases de datos relacionales</li>
-                </ul>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+                    <a class="btn btn-ghost" href="#contacto">Contactame</a>
+                </div>
+
+                <div class="social-row" aria-label="Redes sociales">
+                    <a href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="https://github.com/GregoriEJimenezDev" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="mailto:gregorievangelista43@gmail.com">Email</a>
+                </div>
             </div>
         </section>
 
-        <section class="section container reveal" id="habilidades">
-            <div class="section-head">
-                <p class="eyebrow">Tecnologia</p>
-                <h2>Habilidades tecnicas</h2>
-            </div>
+        <section class="tech-strip" aria-label="Tecnologias">
+            <div class="tech-track">
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET"><span>.NET</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"><span>C#</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server"><span>SQL Server</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+                <div class="tech-item"><img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="Supabase"><span>Supabase</span></div>
 
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>Lenguajes</h3>
-                    <p>C#, SQL, HTML, CSS</p>
-                </article>
-                <article class="skill-card">
-                    <h3>Frameworks y librerias</h3>
-                    <p>.NET, .NET MAUI, React, HTML5, CSS3</p>
-                </article>
-                <article class="skill-card">
-                    <h3>Backend y datos</h3>
-                    <p>.NET 8 Web API, SQL Server, PostgreSQL, EF Core, Supabase</p>
-                </article>
-                <article class="skill-card">
-                    <h3>Herramientas</h3>
-                    <p>Git, GitHub, Visual Studio, Docker</p>
-                </article>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET"><span>.NET</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"><span>C#</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server"><span>SQL Server</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+                <div class="tech-item"><img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="Supabase"><span>Supabase</span></div>
             </div>
         </section>
 
-        <section class="section container reveal" id="proyectos">
-            <div class="section-head">
-                <p class="eyebrow">Trabajo</p>
-                <h2>Proyectos destacados</h2>
+        <section class="section reveal" id="sobre-mi">
+            <div class="container about-grid">
+                <div class="about-image-wrap">
+                    <img src="medagenda-portada.png" alt="Proyecto MedAgenda" class="about-image" loading="lazy">
+                </div>
+                <div>
+                    <p class="section-kicker">Sobre mi</p>
+                    <h2>Desarrollador .NET enfocado en arquitectura y calidad</h2>
+                    <p>
+                        Soy desarrollador de software junior especializado en .NET y C#, con experiencia en aplicaciones desktop y APIs.
+                        Me enfoco en Clean Architecture, principios SOLID y buenas practicas para entregar soluciones estables y escalables.
+                    </p>
+                    <a class="text-link" href="#contacto">Hablemos de tu proyecto</a>
+                </div>
             </div>
+        </section>
 
-            <div class="project-grid">
-                <article class="project-card project-featured">
-                    <img src="medagenda-portada.png" alt="MedAgenda - Panel principal" class="project-image" loading="lazy">
-                    <div class="project-content">
-                        <h3>MedAgenda</h3>
-                        <p>
-                            Plataforma para gestion de consultas y flujo clinico con autenticacion JWT, notificaciones en tiempo real
-                            y persistencia en PostgreSQL.
-                        </p>
-                        <p class="stack"><strong>Stack:</strong> C#, .NET 8, .NET MAUI, EF Core, PostgreSQL, JWT, SignalR</p>
-                        <div class="project-actions">
-                            <a class="btn btn-ghost" href="https://github.com/GregoriEJimenezDev/SGCg" target="_blank" rel="noreferrer">Codigo</a>
+        <section class="section reveal" id="proyectos">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-kicker">Proyectos</p>
+                    <h2>Proyectos destacados</h2>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="medagenda-portada.png" alt="MedAgenda" class="project-image" loading="lazy">
+                        <div class="project-content">
+                            <h3>MedAgenda</h3>
+                            <p>
+                                Plataforma para gestion de consultas clinicas con autenticacion JWT,
+                                notificaciones en tiempo real y persistencia en PostgreSQL.
+                            </p>
+                            <ul class="tag-list">
+                                <li>C#</li>
+                                <li>.NET 8</li>
+                                <li>.NET MAUI</li>
+                                <li>EF Core</li>
+                                <li>PostgreSQL</li>
+                                <li>SignalR</li>
+                            </ul>
+                            <div class="project-actions">
+                                <a href="https://github.com/GregoriEJimenezDev/SGCg" target="_blank" rel="noreferrer">Codigo</a>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="project-card">
-                    <div class="project-content">
-                        <h3>GRFacturacion</h3>
-                        <p>
-                            Sistema de escritorio para administracion de clientes, facturas y recibos con conexion a SQL Server,
-                            validaciones de negocio y arquitectura orientada a mantenimiento.
-                        </p>
-                        <p class="stack"><strong>Stack:</strong> C#, Windows Forms, SQL Server</p>
-                        <div class="project-actions">
-                            <a class="btn btn-ghost" href="https://github.com/GregoriEJimenezDev/GRFacturacion_Sistema" target="_blank" rel="noreferrer">Codigo</a>
+                    <article class="project-card">
+                        <div class="project-image project-image-fallback">
+                            <span>GRFacturacion</span>
                         </div>
-                    </div>
-                </article>
+                        <div class="project-content">
+                            <h3>GRFacturacion</h3>
+                            <p>
+                                Sistema de escritorio para facturacion, clientes y recibos.
+                                Integra SQL Server, reglas de negocio y estructura orientada a mantenimiento.
+                            </p>
+                            <ul class="tag-list">
+                                <li>C#</li>
+                                <li>Windows Forms</li>
+                                <li>SQL Server</li>
+                                <li>POO</li>
+                            </ul>
+                            <div class="project-actions">
+                                <a href="https://github.com/GregoriEJimenezDev/GRFacturacion_Sistema" target="_blank" rel="noreferrer">Codigo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section class="section container reveal" id="contacto">
-            <div class="contact-card">
-                <p class="eyebrow">Disponible para oportunidades</p>
-                <h2>Hablemos de tu proyecto</h2>
-                <p>
-                    Si buscas un perfil .NET con enfoque profesional y ganas de aportar valor desde el primer sprint,
-                    estoy listo para colaborar.
-                </p>
-                <div class="contact-actions">
+        <section class="section reveal" id="perfil-tecnico">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-kicker">Perfil tecnico</p>
+                    <h2>Sobre mi trabajo</h2>
+                </div>
+
+                <div class="faq-list">
+                    <article class="faq-item is-open">
+                        <button class="faq-question" type="button" aria-expanded="true">
+                            <span>Que tecnologias uso?</span>
+                            <span class="faq-symbol">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Trabajo con C#, .NET, .NET MAUI, React, HTML, CSS, SQL Server, PostgreSQL, EF Core, Git y Docker.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Experiencia tecnica</span>
+                            <span class="faq-symbol">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Desarrollo aplicaciones desktop de alto rendimiento y servicios backend con APIs REST,
+                            aplicando buenas practicas de arquitectura y codigo mantenible.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Formacion continua</span>
+                            <span class="faq-symbol">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Mantengo aprendizaje continuo en patrones de diseno, arquitectura limpia y mejora de procesos
+                            para entregar software confiable en entornos reales.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Trabajo en equipo</span>
+                            <span class="faq-symbol">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Me adapto bien a equipos multidisciplinarios, flujo con Git/GitHub y colaboracion con enfoque en calidad,
+                            comunicacion clara y entrega iterativa.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section reveal" id="contacto">
+            <div class="container cta-box">
+                <h2>Trabajamos juntos?</h2>
+                <p>Estoy disponible para nuevas oportunidades. Hablemos.</p>
+                <div class="cta-actions">
                     <a class="btn btn-primary" href="mailto:gregorievangelista43@gmail.com">Enviar email</a>
                     <a class="btn btn-ghost" href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer">LinkedIn</a>
-                    <a class="btn btn-ghost" href="https://github.com/GregoriEJimenezDev" target="_blank" rel="noreferrer">GitHub</a>
                 </div>
-                <p class="contact-meta">gregorievangelista43@gmail.com · 809-271-1236</p>
+                <p class="contact-line">gregorievangelista43@gmail.com · 809-271-1236</p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© <span id="year"></span> Gregori Evangelista Jimenez</p>
+        <div class="container footer-grid">
+            <a class="brand" href="#inicio">GEJ</a>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <p>© <span id="year"></span> Gregori Evangelista Jimenez</p>
+        </div>
     </footer>
 </body>
 </html>
-
