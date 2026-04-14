@@ -8,7 +8,6 @@
     const faqItems = Array.from(document.querySelectorAll('.faq-item'));
     const yearNode = document.getElementById('year');
     const aboutPhotoCard = document.getElementById('aboutPhotoCard');
-    const waveHand = document.getElementById('waveHand');
 
     if (yearNode) {
         yearNode.textContent = String(new Date().getFullYear());
@@ -122,10 +121,11 @@
         });
     });
 
-    const triggerWave = () => {
-        if (!waveHand) return;
-        waveHand.classList.remove('wave-hit');
-        window.requestAnimationFrame(() => waveHand.classList.add('wave-hit'));
+    const triggerGreeting = () => {
+        if (!aboutPhotoCard) return;
+        aboutPhotoCard.classList.remove('is-greeting');
+        window.requestAnimationFrame(() => aboutPhotoCard.classList.add('is-greeting'));
+        window.setTimeout(() => aboutPhotoCard.classList.remove('is-greeting'), 1200);
     };
 
     if (aboutPhotoCard) {
@@ -148,13 +148,13 @@
 
         aboutPhotoCard.addEventListener('mousemove', handleMove);
         aboutPhotoCard.addEventListener('mouseleave', resetTilt);
-        aboutPhotoCard.addEventListener('mouseenter', triggerWave);
-        aboutPhotoCard.addEventListener('click', triggerWave);
-        aboutPhotoCard.addEventListener('focus', triggerWave);
+        aboutPhotoCard.addEventListener('mouseenter', triggerGreeting);
+        aboutPhotoCard.addEventListener('click', triggerGreeting);
+        aboutPhotoCard.addEventListener('focus', triggerGreeting);
         aboutPhotoCard.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                triggerWave();
+                triggerGreeting();
             }
         });
     }
