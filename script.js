@@ -7,6 +7,8 @@
     const typedText = document.getElementById('typedText');
     const faqItems = Array.from(document.querySelectorAll('.faq-item'));
     const yearNode = document.getElementById('year');
+    const aboutPhotoCard = document.getElementById('aboutPhotoCard');
+    const waveHand = document.getElementById('waveHand');
 
     if (yearNode) {
         yearNode.textContent = String(new Date().getFullYear());
@@ -119,4 +121,41 @@
             }
         });
     });
+
+    const triggerWave = () => {
+        if (!waveHand) return;
+        waveHand.classList.remove('wave-hit');
+        window.requestAnimationFrame(() => waveHand.classList.add('wave-hit'));
+    };
+
+    if (aboutPhotoCard) {
+        const handleMove = (event) => {
+            const rect = aboutPhotoCard.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const offsetX = (x / rect.width - 0.5) * 2;
+            const offsetY = (y / rect.height - 0.5) * 2;
+
+            aboutPhotoCard.style.setProperty('--tilt-x', `${(offsetY * -7).toFixed(2)}deg`);
+            aboutPhotoCard.style.setProperty('--tilt-y', `${(offsetX * 9).toFixed(2)}deg`);
+        };
+
+        const resetTilt = () => {
+            aboutPhotoCard.style.setProperty('--tilt-x', '0deg');
+            aboutPhotoCard.style.setProperty('--tilt-y', '0deg');
+        };
+
+        aboutPhotoCard.addEventListener('mousemove', handleMove);
+        aboutPhotoCard.addEventListener('mouseleave', resetTilt);
+        aboutPhotoCard.addEventListener('mouseenter', triggerWave);
+        aboutPhotoCard.addEventListener('click', triggerWave);
+        aboutPhotoCard.addEventListener('focus', triggerWave);
+        aboutPhotoCard.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                triggerWave();
+            }
+        });
+    }
 });
