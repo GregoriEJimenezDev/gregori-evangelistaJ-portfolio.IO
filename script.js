@@ -248,8 +248,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggerGreeting = () => {
         if (!aboutPhotoCard) return;
         aboutPhotoCard.classList.remove('is-greeting');
+        const video = document.querySelector('.greeting-video');
+        if (video) {
+            video.currentTime = 0;
+            video.play().catch(() => {});
+        }
         window.requestAnimationFrame(() => aboutPhotoCard.classList.add('is-greeting'));
-        window.setTimeout(() => aboutPhotoCard.classList.remove('is-greeting'), 1200);
+        window.setTimeout(() => {
+            aboutPhotoCard.classList.remove('is-greeting');
+            if (video) video.pause();
+        }, 1800);
     };
 
     if (aboutPhotoCard) {
