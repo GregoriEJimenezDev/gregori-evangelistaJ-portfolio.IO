@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggerGreeting = () => {
         if (!aboutPhotoCard) return;
         aboutPhotoCard.classList.remove('is-greeting');
-        const video = document.querySelector('.greeting-video');
+        const video = document.querySelector('.about-video');
         if (video) {
             video.currentTime = 0;
             video.play().catch(() => {});
@@ -256,8 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.requestAnimationFrame(() => aboutPhotoCard.classList.add('is-greeting'));
         window.setTimeout(() => {
             aboutPhotoCard.classList.remove('is-greeting');
-            if (video) video.pause();
-        }, 1800);
+        }, 1200);
     };
 
     if (aboutPhotoCard) {
