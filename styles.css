@@ -1,5 +1,5 @@
-﻿:root {
-    --bg: #05070f;
+:root {
+    --bg: #000000;
     --bg-soft: #0d1220;
     --panel: #111827;
     --panel-soft: #0f172a;
@@ -40,27 +40,25 @@ a {
     margin: 0 auto;
 }
 
-.bg-orb {
-    position: fixed;
-    width: 420px;
-    height: 420px;
+.lang-btn {
+    background: transparent;
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 999px;
-    z-index: -1;
-    filter: blur(120px);
-    opacity: 0.46;
-    pointer-events: none;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    font-family: "Outfit", sans-serif;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.orb-purple {
-    top: -140px;
-    left: -130px;
-    background: #8b2bd5;
-}
-
-.orb-cyan {
-    bottom: -170px;
-    right: -120px;
-    background: #0ab4a5;
+.lang-btn:hover {
+    color: var(--cyan-strong);
+    border-color: var(--cyan-strong);
 }
 
 .site-header {
@@ -69,7 +67,7 @@ a {
     left: 0;
     width: 100%;
     z-index: 40;
-    background: rgba(5, 7, 15, 0.66);
+    background: rgba(0, 0, 0, 0.66);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -157,31 +155,6 @@ a {
     place-items: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before,
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 36vw;
-    max-width: 520px;
-    height: 36vw;
-    max-height: 520px;
-    filter: blur(110px);
-    opacity: 0.28;
-    z-index: 0;
-}
-
-.hero::before {
-    background: linear-gradient(135deg, #982cf0, #581f86);
-    top: 10%;
-    left: -8%;
-}
-
-.hero::after {
-    background: linear-gradient(135deg, #277752, #02ffee);
-    bottom: 6%;
-    right: -8%;
 }
 
 .hero-content {
@@ -395,7 +368,7 @@ a {
     font-size: 0.76rem;
     font-weight: 700;
     color: #e2e8f0;
-    background: rgba(5, 7, 15, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(105, 199, 199, 0.65);
     border-radius: 999px;
     padding: 0.26rem 0.62rem;
@@ -654,7 +627,7 @@ a {
 .site-footer {
     margin-top: 5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: #05070f;
+    background: #000000;
 }
 
 .footer-grid {

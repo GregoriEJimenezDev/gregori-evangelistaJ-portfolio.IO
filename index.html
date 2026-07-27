@@ -13,8 +13,6 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="bg-orb orb-purple" aria-hidden="true"></div>
-    <div class="bg-orb orb-cyan" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="nav container">
@@ -24,10 +22,10 @@
             </button>
             <div class="nav-right">
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#sobre-mi">Sobre mi</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#inicio" data-i18n="nav-home">Inicio</a></li>
+                    <li><a href="#proyectos" data-i18n="nav-projects">Proyectos</a></li>
+                    <li><a href="#sobre-mi" data-i18n="nav-about">Sobre mi</a></li>
+                    <li><a href="#contacto" data-i18n="nav-contact">Contacto</a></li>
                 </ul>
                 <div class="nav-social" aria-label="Redes en barra de navegacion">
                     <a href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer" title="LinkedIn">
@@ -41,6 +39,7 @@
                         </svg>
                     </a>
                 </div>
+                <button class="lang-btn" id="langBtn" title="Cambiar idioma">ES</button>
             </div>
         </nav>
     </header>
@@ -48,16 +47,16 @@
     <main>
         <section class="hero" id="inicio">
             <div class="container hero-content">
-                <p class="hero-kicker">Portafolio profesional</p>
-                <h1>Hola! soy Gregori</h1>
+                <p class="hero-kicker" data-i18n="hero-kicker">Portafolio profesional</p>
+                <h1 data-i18n="hero-title">Hola! soy Gregori</h1>
                 <p class="hero-role" id="typedText" aria-live="polite"></p>
-                <p class="hero-copy">
+                <p class="hero-copy" data-i18n="hero-desc">
                     Explora mis proyectos, conoce mas sobre mi perfil y hablemos si buscas un desarrollador .NET comprometido con resultados.
                 </p>
 
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-                    <a class="btn btn-ghost" href="#contacto">Contactame</a>
+                    <a class="btn btn-primary" href="#proyectos" data-i18n="hero-projects-btn">Ver proyectos</a>
+                    <a class="btn btn-ghost" href="#contacto" data-i18n="hero-contact-btn">Contactame</a>
                 </div>
 
                 <div class="social-row" aria-label="Redes sociales">
@@ -98,18 +97,18 @@
                         <div class="greeting-character" id="greetingCharacter" aria-hidden="true">
                             <img src="gregori-photo.jpg" alt="" class="greeting-avatar" loading="lazy">
                         </div>
-                        <div class="greeting-bubble" id="greetingBubble" aria-hidden="true">Hola, bienvenido</div>
+                        <div class="greeting-bubble" id="greetingBubble" aria-hidden="true" data-i18n="greeting">Hola, bienvenido</div>
                     </div>
                     <p class="photo-note"></p>
                 </div>
                 <div>
-                    <p class="section-kicker">Sobre mi</p>
-                    <h2>Desarrollador .NET enfocado en arquitectura y calidad</h2>
-                    <p>
+                    <p class="section-kicker" data-i18n="about-kicker">Sobre mi</p>
+                    <h2 data-i18n="about-title">Desarrollador .NET enfocado en arquitectura y calidad</h2>
+                    <p data-i18n="about-desc">
                         Soy desarrollador de software junior especializado en .NET y C#, con experiencia en aplicaciones desktop y APIs.
                         Me enfoco en Clean Architecture, principios SOLID y buenas practicas para entregar soluciones estables y escalables.
                     </p>
-                    <a class="text-link" href="#contacto">Hablemos de tu proyecto</a>
+                    <a class="text-link" href="#contacto" data-i18n="about-link">Hablemos de tu proyecto</a>
                 </div>
             </div>
         </section>
@@ -117,8 +116,8 @@
         <section class="section reveal" id="proyectos">
             <div class="container">
                 <div class="section-head">
-                    <p class="section-kicker">Proyectos</p>
-                    <h2>Proyectos destacados</h2>
+                    <p class="section-kicker" data-i18n="projects-kicker">Proyectos</p>
+                    <h2 data-i18n="projects-title">Proyectos destacados</h2>
                 </div>
 
                 <div class="project-grid">
@@ -126,7 +125,7 @@
                         <img src="medagenda-portada.png" alt="MedAgenda" class="project-image" loading="lazy">
                         <div class="project-content">
                             <h3>MedAgenda</h3>
-                            <p>
+                            <p data-i18n="project-1-desc">
                                 Plataforma para gestion de consultas clinicas con autenticacion JWT,
                                 notificaciones en tiempo real y persistencia en PostgreSQL.
                             </p>
@@ -139,7 +138,7 @@
                                 <li>SignalR</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/SGCg" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/SGCg" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -150,7 +149,7 @@
                         </div>
                         <div class="project-content">
                             <h3>GRFacturacion</h3>
-                            <p>
+                            <p data-i18n="project-2-desc">
                                 Sistema de escritorio para facturacion, clientes y recibos.
                                 Integra SQL Server, reglas de negocio y estructura orientada a mantenimiento.
                             </p>
@@ -161,7 +160,7 @@
                                 <li>POO</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/GRFacturacion_Sistema" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/GRFacturacion_Sistema" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -170,7 +169,7 @@
                         <img src="safemap-portada.png" alt="SafeMap RD" class="project-image" loading="lazy">
                         <div class="project-content">
                             <h3>SafeMap RD</h3>
-                            <p>
+                            <p data-i18n="project-3-desc">
                                 Aplicación web para visualizar y reportar robos recientes en
                                 República Dominicana con mapa interactivo, filtros y panel admin.
                             </p>
@@ -182,7 +181,7 @@
                                 <li>Seguridad</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/Safety" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/Safety" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -191,7 +190,7 @@
                         <img src="CalculadorComision.png" alt="Calculadora de Comisiones" class="project-image" loading="lazy">
                         <div class="project-content">
                             <h3>Calculadora de Comisiones</h3>
-                            <p>
+                            <p data-i18n="project-4-desc">
                                 App web para calcular comisiones de vendedores por ventas mensuales
                                 y política regional. Clean Architecture + SOLID en vanilla JS.
                             </p>
@@ -203,7 +202,7 @@
                                 <li>UX Heuristics</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/CalculadoraComisionVentas" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/CalculadoraComisionVentas" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -212,7 +211,7 @@
                         <img src="ConsumoElectrico.png" alt="Predictor Consumo Eléctrico" class="project-image" loading="lazy">
                         <div class="project-content">
                             <h3>Predictor Consumo Eléctrico</h3>
-                            <p>
+                            <p data-i18n="project-5-desc">
                                 Class Library modular en C# con Clean Architecture para predecir
                                 consumo eléctrico. Centraliza la lógica de negocio para integrarse
                                 en múltiples interfaces .NET (Web, Desktop, MAUI).
@@ -225,7 +224,7 @@
                                 <li>Class Library</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/PredicadorConsumoElectrico" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/PredicadorConsumoElectrico" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -234,7 +233,7 @@
                         <img src="linkPro.png" alt="LinkUp-Pro" class="project-image" loading="lazy">
                         <div class="project-content">
                             <h3>LinkUp-Pro</h3>
-                            <p>
+                            <p data-i18n="project-6-desc">
                                 Plataforma de conexión profesional para networking y
                                 oportunidades laborales. En desarrollo con arquitectura moderna.
                             </p>
@@ -245,7 +244,7 @@
                                 <li>SQL Server</li>
                             </ul>
                             <div class="project-actions">
-                                <a href="https://github.com/GregoriEJimenezDev/LinkUp-Pro" target="_blank" rel="noreferrer">Codigo</a>
+                                <a href="https://github.com/GregoriEJimenezDev/LinkUp-Pro" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>
                             </div>
                         </div>
                     </article>
@@ -256,27 +255,27 @@
         <section class="section reveal" id="perfil-tecnico">
             <div class="container">
                 <div class="section-head">
-                    <p class="section-kicker">Perfil tecnico</p>
-                    <h2>Sobre mi trabajo</h2>
+                    <p class="section-kicker" data-i18n="tech-kicker">Perfil tecnico</p>
+                    <h2 data-i18n="tech-title">Sobre mi trabajo</h2>
                 </div>
 
                 <div class="faq-list">
                     <article class="faq-item is-open">
                         <button class="faq-question" type="button" aria-expanded="true">
-                            <span>Que tecnologias uso?</span>
+                            <span data-i18n="faq-1-q">Que tecnologias uso?</span>
                             <span class="faq-symbol">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" data-i18n="faq-1-a">
                             Trabajo con C#, .NET, .NET MAUI, React, HTML, CSS, SQL Server, PostgreSQL, EF Core, Git y Docker.
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>Experiencia tecnica</span>
+                            <span data-i18n="faq-2-q">Experiencia tecnica</span>
                             <span class="faq-symbol">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" data-i18n="faq-2-a">
                             Desarrollo aplicaciones desktop de alto rendimiento y servicios backend con APIs REST,
                             aplicando buenas practicas de arquitectura y codigo mantenible.
                         </div>
@@ -284,10 +283,10 @@
 
                     <article class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>Formacion continua</span>
+                            <span data-i18n="faq-3-q">Formacion continua</span>
                             <span class="faq-symbol">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" data-i18n="faq-3-a">
                             Mantengo aprendizaje continuo en patrones de diseno, arquitectura limpia y mejora de procesos
                             para entregar software confiable en entornos reales.
                         </div>
@@ -295,10 +294,10 @@
 
                     <article class="faq-item">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            <span>Trabajo en equipo</span>
+                            <span data-i18n="faq-4-q">Trabajo en equipo</span>
                             <span class="faq-symbol">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" data-i18n="faq-4-a">
                             Me adapto bien a equipos multidisciplinarios, flujo con Git/GitHub y colaboracion con enfoque en calidad,
                             comunicacion clara y entrega iterativa.
                         </div>
@@ -309,11 +308,11 @@
 
         <section class="cta-section reveal" id="contacto">
             <div class="container cta-box">
-                <h2>Trabajamos juntos?</h2>
-                <p>Estoy disponible para nuevas oportunidades. Hablemos.</p>
+                <h2 data-i18n="cta-title">Trabajamos juntos?</h2>
+                <p data-i18n="cta-desc">Estoy disponible para nuevas oportunidades. Hablemos.</p>
                 <div class="cta-actions">
-                    <a class="btn btn-primary" href="mailto:gregorievangelista43@gmail.com">Enviar email</a>
-                    <a class="btn btn-ghost" href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a class="btn btn-primary" href="mailto:gregorievangelista43@gmail.com" data-i18n="cta-email-btn">Enviar email</a>
+                    <a class="btn btn-ghost" href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer" data-i18n="cta-linkedin-btn">LinkedIn</a>
                 </div>
                 <div class="contact-social-links">
                     <a href="https://linkedin.com/in/gregori-evangelista-jimenez-5a077932b" target="_blank" rel="noreferrer">
@@ -338,10 +337,10 @@
         <div class="container footer-grid">
             <a class="brand" href="#inicio">GEJ</a>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#sobre-mi">Sobre mi</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#proyectos" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="#sobre-mi" data-i18n="nav-about">Sobre mi</a></li>
+                <li><a href="#contacto" data-i18n="nav-contact">Contacto</a></li>
             </ul>
             <p>© <span id="year"></span> Gregori Evangelista Jimenez</p>
         </div>
