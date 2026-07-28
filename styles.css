@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    background: transparent;
 }
 
 body {
@@ -51,7 +52,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.watermark-cover {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    height: 220px;
+    background: #000;
+    z-index: 0;
+    pointer-events: none;
 }
 
 a {
