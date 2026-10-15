@@ -480,10 +480,26 @@ a {
 .project-image-fallback {
     display: grid;
     place-items: center;
+    aspect-ratio: 16 / 9;
     background: linear-gradient(135deg, #1e3a5f, #0d6f67);
     color: #fff;
     font-size: 1.3rem;
     font-weight: 700;
+}
+
+.collab-badge {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    background: rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(37, 99, 235, 0.5);
+    border-radius: 0.55rem;
+    padding: 0.15rem 0.5rem;
 }
 
 .project-content {
