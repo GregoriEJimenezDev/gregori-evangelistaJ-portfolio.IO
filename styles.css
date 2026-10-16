@@ -547,6 +547,22 @@ a {
     color: #0b1220;
 }
 
+.project-actions a.stars-badge {
+    border: 0;
+    padding: 0;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    background: transparent;
+}
+
+.project-actions a.stars-badge:hover {
+    background: transparent;
+}
+
+.project-actions a.stars-badge img {
+    display: block;
+}
+
 .faq-list {
     display: grid;
     gap: 0.8rem;
