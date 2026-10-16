@@ -15,14 +15,18 @@ const translations = {
         'about-link': 'Hablemos de tu proyecto',
         'projects-kicker': 'Proyectos',
         'projects-title': 'Proyectos destacados',
+        'projects-all-kicker': 'Proyectos',
+        'projects-all-title': 'Todos los proyectos',
+        'collab-badge': 'Colaborativo',
         'project-1-desc': 'Plataforma para gestion de consultas clinicas con autenticacion JWT, notificaciones en tiempo real y persistencia en PostgreSQL.',
-        'project-2-desc': 'Sistema de escritorio para facturacion, clientes y recibos. Integra SQL Server, reglas de negocio y estructura orientada a mantenimiento.',
         'project-3-desc': 'Aplicación web para visualizar y reportar robos recientes en República Dominicana con mapa interactivo, filtros y panel admin.',
         'project-4-desc': 'App web para calcular comisiones de vendedores por ventas mensuales y política regional. Clean Architecture + SOLID en vanilla JS.',
         'project-5-desc': 'Class Library modular en C# con Clean Architecture para predecir consumo eléctrico. Centraliza la lógica de negocio para integrarse en múltiples interfaces .NET (Web, Desktop, MAUI).',
         'project-6-desc': 'Plataforma de conexión profesional para networking y oportunidades laborales. En desarrollo con arquitectura moderna.',
         'project-7-desc': 'Plataforma de votación electrónica con autenticación segura, gestión de candidatos y resultados en tiempo real con PostgreSQL.',
         'project-8-desc': 'Sistema para cálculo y gestión de costos de importación, con control de aranceles, tasas y generación de reportes.',
+        'project-voosk-desc': 'IA open-source estilo OpenCode que muestra paso a paso lo que hace, con tareas, constructor de prompts, skills, consejos, evaluación de proyectos y rúbricas.',
+        'project-artemis-desc': 'Sistema bancario con roles, transacciones y pagos Hermes Pay. Clean Architecture + CQRS con .NET 9 y PostgreSQL.',
         'code-link': 'Codigo',
         'tech-kicker': 'Perfil tecnico',
         'tech-title': 'Sobre mi trabajo',
@@ -56,14 +60,18 @@ const translations = {
         'about-link': "Let's talk about your project",
         'projects-kicker': 'Projects',
         'projects-title': 'Featured Projects',
+        'projects-all-kicker': 'Projects',
+        'projects-all-title': 'All Projects',
+        'collab-badge': 'Collaborative',
         'project-1-desc': 'Platform for clinical appointment management with JWT authentication, real-time notifications and PostgreSQL persistence.',
-        'project-2-desc': 'Desktop system for invoicing, clients and receipts. Integrates SQL Server, business rules and maintenance-oriented structure.',
         'project-3-desc': 'Web application to view and report recent thefts in Dominican Republic with interactive map, filters and admin panel.',
         'project-4-desc': 'Web app to calculate sales commissions by monthly sales and regional policy. Clean Architecture + SOLID in vanilla JS.',
         'project-5-desc': 'Modular C# Class Library with Clean Architecture to predict electrical consumption. Centralizes business logic to integrate into multiple .NET interfaces (Web, Desktop, MAUI).',
         'project-6-desc': 'Professional connection platform for networking and job opportunities. In development with modern architecture.',
         'project-7-desc': 'Electronic voting platform with secure authentication, candidate management and real-time results with PostgreSQL.',
         'project-8-desc': 'System for calculating and managing import costs, with tariff control, fees and report generation.',
+        'project-voosk-desc': 'Open-source AI in the style of OpenCode that shows step by step what it does, with tasks, prompt builder, skills, advice, project evaluation and rubrics.',
+        'project-artemis-desc': 'Banking system with roles, transactions and Hermes Pay payments. Clean Architecture + CQRS with .NET 9 and PostgreSQL.',
         'code-link': 'Code',
         'tech-kicker': 'Technical Profile',
         'tech-title': 'About My Work',
@@ -84,6 +92,39 @@ const translations = {
 };
 
 let currentLang = 'es';
+
+const projects = [
+    { slug: 'medagenda', title: 'MedAgenda', descKey: 'project-1-desc', image: 'medagenda-portada.png', tags: ['C#', '.NET 8', '.NET MAUI', 'EF Core', 'PostgreSQL', 'SignalR'], repo: 'https://github.com/Johanvasquezdev/MedAgenda', featured: true, collaborative: false },
+    { slug: 'predictor', title: 'Predictor Consumo Eléctrico', descKey: 'project-5-desc', image: 'ConsumoElectrico.png', tags: ['C#', 'ASP.NET MVC', 'Clean Architecture', 'HTML/CSS', 'Class Library'], repo: 'https://github.com/GregoriEJimenezDev/PredicadorConsumoElectrico', featured: true, collaborative: false },
+    { slug: 'evote360pro', title: 'Evote360Pro', descKey: 'project-7-desc', image: null, tags: ['C#', '.NET', 'Clean Architecture', 'PostgreSQL', 'Entity Framework'], repo: 'https://github.com/GregoriEJimenezDev/Evote360Pro', featured: true, collaborative: false },
+    { slug: 'linkup-pro', title: 'LinkUp-Pro', descKey: 'project-6-desc', image: 'linkPro.png', tags: ['C#', 'ASP.NET MVC', 'Clean Architecture', 'SQL Server'], repo: 'https://github.com/GregoriEJimenezDev/LinkUp-Pro', featured: true, collaborative: false },
+    { slug: 'voosk', title: 'VOOsk', descKey: 'project-voosk-desc', image: null, tags: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'WebSocket', 'Docker'], repo: 'https://github.com/GregoriEJimenezDev/VOOsk.git', featured: true, collaborative: false },
+    { slug: 'artemis', title: 'ArtemisBankingPro', descKey: 'project-artemis-desc', image: null, tags: ['C#', '.NET 9', 'EF Core', 'PostgreSQL', 'MediatR', 'JWT'], repo: 'https://github.com/Johanvasquezdev/ArtemisBankingPro.git', featured: true, collaborative: true },
+    { slug: 'safemap', title: 'SafeMap RD', descKey: 'project-3-desc', image: 'safemap-portada.png', tags: ['JavaScript', 'Node.js', 'Leaflet', 'HTML/CSS', 'Seguridad'], repo: 'https://github.com/GregoriEJimenezDev/Safety', featured: false, collaborative: false },
+    { slug: 'comisiones', title: 'Calculadora de Comisiones', descKey: 'project-4-desc', image: 'CalculadorComision.png', tags: ['JavaScript', 'HTML/CSS', 'Clean Architecture', 'SOLID', 'UX Heuristics'], repo: 'https://github.com/GregoriEJimenezDev/CalculadoraComisionVentas', featured: false, collaborative: false },
+    { slug: 'importcost', title: 'ImportCost-Pro', descKey: 'project-8-desc', image: null, tags: ['C#', '.NET', 'Clean Architecture', 'SQL Server'], repo: 'https://github.com/Johanvasquezdev/ImportCost-Pro', featured: false, collaborative: true },
+];
+
+function repoPath(url) {
+    return url.replace('https://github.com/', '').replace(/\.git$/, '');
+}
+
+function projectCardHTML(p) {
+    const visual = p.image
+        ? `<img src="${p.image}" alt="${p.title}" class="project-image" loading="lazy">`
+        : `<div class="project-image project-image-fallback"><span>${p.title}</span></div>`;
+    const tags = p.tags.map((t) => `<li>${t}</li>`).join('');
+    const badge = p.collaborative ? `<span class="collab-badge" data-i18n="collab-badge">Colaborativo</span>` : '';
+    const stars = p.featured ? `<a class="stars-badge" href="${p.repo}" target="_blank" rel="noreferrer" title="Stars en GitHub"><img src="https://img.shields.io/github/stars/${repoPath(p.repo)}?style=flat" alt="GitHub stars" loading="lazy"></a>` : '';
+    return `<article class="project-card">${visual}<div class="project-content"><h3>${p.title} ${badge}</h3><p data-i18n="${p.descKey}"></p><ul class="tag-list">${tags}</ul><div class="project-actions"><a href="${p.repo}" target="_blank" rel="noreferrer" data-i18n="code-link">Codigo</a>${stars}</div></div></article>`;
+}
+
+function renderProjects() {
+    const featuredGrid = document.getElementById('featuredGrid');
+    const allGrid = document.getElementById('projectsGrid');
+    if (featuredGrid) featuredGrid.innerHTML = projects.filter((p) => p.featured).map(projectCardHTML).join('');
+    if (allGrid) allGrid.innerHTML = projects.filter((p) => !p.featured).map(projectCardHTML).join('');
+}
 
 function detectLanguage() {
     const saved = localStorage.getItem('lang');
@@ -116,6 +157,7 @@ function applyLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
     const detected = detectLanguage();
     applyLanguage(detected);
 
